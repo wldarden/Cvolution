@@ -8,11 +8,12 @@
 
 
 #include "Species.hpp"
+#include "../Globals.hpp"
 
 //std libraries
 // #include <stdlib.h>
 #include<string>
-// #include<vector>
+#include<vector>
 
 using namespace std;
 
@@ -20,14 +21,20 @@ string Species::getName(){
     return name;
 }
 
-// string toString(string style){
-//     switch(style){
-//         case("basic"): return "Name: " + name + " Weight: " + weight + " Drift: " + drift;
-//         case("full"):
-//         string description = this->toString("basic") + "\n";
-//         for(Gene* gene:genes){
-//             description += "\t" + gene->toString() + "\n";
-//         }
-//         return description;
-//     }
-// }
+//Generate a set of new Lifeforms using the species genome
+vector<Lifeform*> Species::seedPop(int n){
+
+}
+
+string Species::toString(int style){
+    switch(style){
+    case(LESS): return "Name: " + name;
+    // case(FULL):
+    //     string description = this->toString(LESS) + "\n";
+    //     for(Gene* gene:genes){
+    //         description += "\t" + gene->toString() + "\n";
+    //     }
+    //     return description;
+    }
+    return "ERROR: no Species description found for given style";
+}

@@ -31,7 +31,8 @@ protected:
 
 public:
     //constructors
-    Lifeform(string n,unsigned char x,unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e): name(n), loc(Location(x,y)),color(Color(r,g,b)),age(a),water(w),energy(e) {}
+    Lifeform(string n,unsigned char x,unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
+        name(n), loc(Location(x,y)),color(Color(r,g,b)),age(a),water(w),energy(e) {}
 
     //getters
     string getName();
@@ -45,6 +46,7 @@ public:
     //functions
     // Lifeform* reproduce();
     virtual void update();
+
 
 };
 

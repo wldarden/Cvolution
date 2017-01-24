@@ -1,21 +1,27 @@
 //
-//  Species.hpp
+//  Life.hpp
 //
 //
 //  Created by Will Darden on 1/22/17.
 //
 // A species is a definable set of lifeforms. They define an average genome.
 
-#ifndef Species_hpp
-#define Species_hpp
+#ifndef Life_hpp
+#define Life_hpp
 
+//Evolution classes
 #include "../Genome/Genome.hpp"
-#include "Lifeform.hpp"
+#include "../World/Utilities/Location.hpp"
+#include "./Utilities/Color.hpp"
+#include "./Plant.hpp"
+#include "./Species.hpp"
+#include "Interaction.hpp"
+
 //std libraries
 #include<string>
 #include<vector>
 
-class Species{
+class Life{
 private:
     string name;
     Genome genome;
@@ -30,8 +36,8 @@ private:
 
 public:
     //constructors
-    Species(){}
-    Species(string n): name(n){}
+    Life(){}
+    Life(string n): name(n){}
 
     //getters
     string getName();
@@ -44,4 +50,4 @@ public:
     float getFitness();
 };
 
-#endif /* Species_hpp */
+#endif /* Life_hpp */
