@@ -37,9 +37,8 @@ public:
     string getName();
     Genome* getGenome();
 
-
     //functions
-    void mutate(float stddev);
+    void mutate(float stddev);// create child species
     string toString(int style);
     float getFitness();
 };

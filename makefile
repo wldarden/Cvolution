@@ -19,7 +19,7 @@ Plant.o: src/Life/Plant.cpp src/Life/Plant.hpp src/Life/Lifeform.hpp src/genome/
 	$(CXX) $(CXXFLAGS) -c src/Life/Plant.cpp
 Species.o: src/Life/Species.cpp src/Life/Species.hpp src/Life/Lifeform.hpp src/genome/Genome.hpp src/Options.hpp
 	$(CXX) $(CXXFLAGS) -c src/Life/Species.cpp
-Lifeform.o: src/Life/Lifeform.cpp src/Life/Lifeform.hpp src/Options.hpp
+Lifeform.o: src/Life/Lifeform.cpp src/Life/Lifeform.hpp src/Options.hpp src/World/Utilities/Location.hpp
 	$(CXX) $(CXXFLAGS) -c src/Life/Lifeform.cpp
 Genome.o: src/genome/Genome.cpp src/genome/Genome.hpp src/genome/Regulator.hpp src/genome/Gene.hpp src/Options.hpp
 	$(CXX) $(CXXFLAGS) -c src/genome/Genome.cpp

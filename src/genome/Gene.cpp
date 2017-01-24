@@ -20,16 +20,16 @@ string Gene::getName(){
     return name;
 }
 
-float Gene::getDrift(){
+double Gene::getDrift(){
     return drift;
 }
 
-float Gene::getValue(){
+double Gene::getValue(){
     return value;
 }
 
 void Gene::mutate(){
-    float delta = ((rand() % 200 - 100) / 100) * drift; // -100% to 100% of drift
+    double delta = ((rand() % 200 - 100) / 100) * drift; // -100% to 100% of drift
     value += delta;
     drift += delta/10; //vary drift by much less
 }

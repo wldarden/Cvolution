@@ -28,7 +28,5 @@ const string VERSION = "0.1";
 ////////////////////////////////////////////////
 //when calling a toString method, pass DETAIL as a parameter to vary level of description
 enum DETAIL {LESS, MORE, FULL};
-
-
-
+enum LOCATION_ERRORS {OUT_OF_BOUNDS};
 #endif /* Globas_hpp */

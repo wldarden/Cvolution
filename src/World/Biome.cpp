@@ -20,7 +20,7 @@ string Biome::getName(){
 }
 
 void Biome::update(){
-
+    weather->update();
 }
 
 //INFO

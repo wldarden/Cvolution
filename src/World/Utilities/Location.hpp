@@ -9,6 +9,9 @@
 #ifndef Location_hpp
 #define Location_hpp
 
+//Evolution classes
+#include "../../Options.hpp"
+
 //std libraries
 // #include<vector>
 
@@ -16,10 +19,16 @@ class Location{
 private:
     unsigned char x;
     unsigned char y;
+    unsigned char max;
+
+    unsigned char validate(unsigned char xy){
+        xy = xy > max ? max : xy;
+        return xy < 0 ? 0 : xy;
+    }
 public:
     //constructors
-    Location(unsigned char lat, unsigned char lng):x(lat), y(lng){}
-    Location(int lat, int lng):x((unsigned char) lat), y((unsigned char) lng){}
+    Location(unsigned char X, unsigned char Y, unsigned char m):x(X), y(Y), max(m){}
+    // Location(int X, int Y, int m):x((unsigned char) X), y((unsigned char) Y), max((unsigned char) m){}
 
     //getters
     unsigned char getX(){
@@ -38,9 +47,11 @@ public:
     //functions
     void moveX(unsigned char delta){
         x+=delta;
+        x = validate(y);
     }
     void moveY(unsigned char delta){
         y+=delta;
+        y = validate(y);
     }
 
 };

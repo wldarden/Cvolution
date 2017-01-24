@@ -31,8 +31,8 @@ protected:
 
 public:
     //constructors
-    Lifeform(string n,unsigned char x,unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
-        name(n), loc(Location(x,y)),color(Color(r,g,b)),age(a),water(w),energy(e) {}
+    Lifeform(string n, Location l, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
+        name(n), loc(l),color(Color(r,g,b)),age(a),water(w),energy(e) {}
 
     //getters
     string getName();

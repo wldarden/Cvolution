@@ -19,20 +19,25 @@ using namespace std;
 class Gene{
 private:
     string name;
-    float value;
-    float drift;
+    double value;
+    double drift;
 
 public:
     //constructors
-    Gene(string n, float v):name(n), value(v){
+    Gene(){
+        name = "Efficiency";
+        value = 5;
         drift = DEF_GENE_DRIFT;
     }
-    Gene(string n, float v, float d): name(n), value(v), drift(d) {}
+    Gene(string n, double v):name(n), value(v){
+        drift = DEF_GENE_DRIFT;
+    }
+    Gene(string n, double v, double d): name(n), value(v), drift(d) {}
 
     //getters
     string getName();
-    float getDrift();
-    float getValue();
+    double getDrift();
+    double getValue();
 
     //functions
     void mutate();

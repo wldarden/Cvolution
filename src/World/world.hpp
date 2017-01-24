@@ -19,14 +19,17 @@ using namespace std;
 
 class World{
 private:
-    int time = 0;
-    string name = "DeafaultWorld";
+    int time;
+    string name;
     vector<Biome*> biomes;
     vector<Species*> species;
 
 public:
     //constructors
-    World(){}
+    World(){
+        time = 0;
+        name = "DeafaultWorld";
+    }
     // World(string n, float w): name(n), weight(w){}
 
     //getters
