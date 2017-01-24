@@ -22,7 +22,7 @@ private:
     int id;
     string name;
     double mass;//kg
-    float energy;//per mass kg
+    float energy;//J per kg
 
     void validateMass(){
         mass = mass >= 0 ? mass : 0;
