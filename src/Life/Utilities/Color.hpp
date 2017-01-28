@@ -19,6 +19,11 @@ private:
     unsigned char b;
 public:
     //constructors
+    Color(){
+        r = 128;
+        g = 128;
+        b = 128;
+    }
     Color(unsigned char red, unsigned char green, unsigned char blue):r(red), g(green), b(blue){}
     Color(int red, int green, int blue):r((unsigned char) red), g((unsigned char) green), b((unsigned char) blue){}
 

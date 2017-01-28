@@ -9,6 +9,8 @@
 
 #include "Lifeform.hpp"
 
+//Evolution classes
+#include "../Globals.hpp"
 //std libraries
 #include <stdlib.h>
 #include<string>
@@ -16,22 +18,15 @@
 
 using namespace std;
 
-string Lifeform::getName(){
-    return name;
+string Lifeform::toString(int style){
+    switch(style){
+    case(LESS): return "Name: " + name + " Mass: " + to_string(mass) + "(kg) water: " + to_string(water) + " energy: " + to_string(energy);
+    // case(FULL ):
+    //     string description = this->toString("basic") + "\n";
+    //     for(Gene* gene:genes){
+    //         description += "\t" + gene->toString() + "\n";
+    //     }
+    //     return description;
+    }
+    return "ERROR: No description for given style in Lifeform toString method.";
 }
-
-float Lifeform::getWeight(){
-    return weight;
-}
-
-// string toString(string style){
-//     switch(style){
-//         case("basic"): return "Name: " + name + " Weight: " + weight + " Drift: " + drift;
-//         case("full"):
-//         string description = this->toString("basic") + "\n";
-//         for(Gene* gene:genes){
-//             description += "\t" + gene->toString() + "\n";
-//         }
-//         return description;
-//     }
-// }

@@ -22,7 +22,7 @@ private:
 
 public:
     //constructors
-    Plant(string n, unsigned char x, unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e): Lifeform(n,Location(x,y),Color(r,g,b),a,w,e) {}
+    Plant(string n, unsigned char x, unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e): Lifeform(n,new Location(x,y),new Color(r,g,b),a,w,e) {}
 
     //getters
 

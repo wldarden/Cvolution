@@ -13,7 +13,7 @@
 //std libraries
 // #include <stdlib.h>
 #include<string>
-#include<vector>
+#include<list>
 
 using namespace std;
 
@@ -22,13 +22,27 @@ string Species::getName(){
 }
 
 //Generate a set of new Lifeforms using the species genome
-vector<Lifeform*> Species::seedPop(int n){
+void Species::seedPop(int n){
+    for(int i = 0; i < n ;i++){
+        addLifeform(builder());
+    }
+}
 
+void Species::addLifeform(Lifeform* l){
+    population++;
+    lifeforms.push_back(l);
 }
 
 string Species::toString(int style){
+    string description = "";
     switch(style){
-    case(LESS): return "Name: " + name;
+    case(LESS): return "Name: " + name + " Population: " + to_string(population);
+    case(MORE):
+        description = this->toString(LESS) + "\n";
+        for(Lifeform* l:lifeforms){
+            description += "\t" + l->toString(LESS) + "\n";
+        }
+        return description;
     // case(FULL):
     //     string description = this->toString(LESS) + "\n";
     //     for(Gene* gene:genes){

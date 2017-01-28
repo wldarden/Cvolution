@@ -21,7 +21,7 @@
 
 class Spot{
 private:
-    const int SIZE = BIOME_SIZE;
+    const int SIZE = DEF_BIOME_SIZE;
 
     Location loc;
     vector<Lifeform*> lifeforms;

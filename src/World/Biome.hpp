@@ -19,7 +19,7 @@
 
 class Biome{
 private:
-    const int SIZE = BIOME_SIZE;
+    const int SIZE = DEF_BIOME_SIZE;
 
     string name;
     int size;

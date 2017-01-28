@@ -8,29 +8,37 @@
 
 #ifndef Species_hpp
 #define Species_hpp
-
+//Evolution classes
+#include "../Options.hpp"
 #include "../Genome/Genome.hpp"
 #include "Lifeform.hpp"
+
 //std libraries
 #include<string>
-#include<vector>
+#include<list>
 
 class Species{
 private:
     string name;
-    Genome genome;
-    vector<Lifeform*> lifeforms;
-    int total = 0;
+    Genome* genome;
+    list<Lifeform*> lifeforms;
+    int population;
 
     //init functions
-    vector<Lifeform*> seedPop(int n);
-
+    void seedPop(int n);
+    void addLifeform(Lifeform* l);
+    virtual Lifeform* builder();
     //Analytical functions
-    Genome defineGenome(vector<Lifeform*> pop);
+    Genome defineGenome(list<Lifeform*> pop);
 
 public:
     //constructors
-    Species(){}
+    Species(){
+        name = "DefaultSpecies";
+        genome = new Genome();
+        population = 0;
+        seedPop(DEF_SPECIES_SEED_POP);
+    }
     Species(string n): name(n){}
 
     //getters

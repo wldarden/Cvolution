@@ -15,6 +15,7 @@
 
 //std libraries
 #include<string>
+#include<stdlib.h>
 // #include<vector>
 
 using namespace std;
@@ -22,30 +23,41 @@ using namespace std;
 class Lifeform{
 protected:
     string name;
-    Location loc;
-    Color color;
+    Location* loc;
+    Color* color;
     int age;
     float water;
     float energy;
-    float weight;
+    float mass;
 
 public:
     //constructors
-    Lifeform(string n, Location l, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
-        name(n), loc(l),color(Color(r,g,b)),age(a),water(w),energy(e) {}
-    Lifeform(string n, Location l, Color c, int a, float w, float e):
+    Lifeform(){
+        name = "DefaultLifeform";
+        loc = new Location(rand()%DEF_BIOME_SIZE,rand()%DEF_BIOME_SIZE);
+        color = new Color();
+        age = 0;
+        water = DEF_LIFEFORM_WATER;
+        energy = DEF_LIFEFORM_ENERGY;
+        mass = .01;
+    }
+    Lifeform(string n, Location* l, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
+        name(n), loc(l),color(new Color(r,g,b)),age(a),water(w),energy(e) {}
+    Lifeform(string n, Location* l, Color* c, int a, float w, float e):
         name(n), loc(l),color(c),age(a),water(w),energy(e) {}
     //getters
-    string getName();
-    int getLocation();
-    unsigned char* getColor();
-    int getAge();
-    float getWater();
-    float getEnergy();
-    float getWeight();
+
+    string getName() {return name;};
+    Location* getLocation(){return loc;};
+    Color* getColor(){return color;};
+    int getAge(){return age;};
+    float getWater(){return water;};
+    float getEnergy(){return energy;};
+    float getMass(){return mass;};
 
     //functions
-    // Lifeform* reproduce();
+    string toString(int style);
+    virtual Lifeform* reproduce();
     virtual void update();
 
 
