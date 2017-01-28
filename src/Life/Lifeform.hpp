@@ -33,7 +33,8 @@ public:
     //constructors
     Lifeform(string n, Location l, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
         name(n), loc(l),color(Color(r,g,b)),age(a),water(w),energy(e) {}
-
+    Lifeform(string n, Location l, Color c, int a, float w, float e):
+        name(n), loc(l),color(c),age(a),water(w),energy(e) {}
     //getters
     string getName();
     int getLocation();

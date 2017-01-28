@@ -14,14 +14,19 @@
 //std libraries
 #include<string>
 #include<vector>
-
+using namespace std;
 class Genome{
 private:
     string name;
     vector<Regulator*> regulators;
 public:
     //constructors
-    Genome(){}
+    Genome(){
+        name = "DefaultGenome";
+        regulators.push_back(new Regulator());
+        regulators.push_back(new Regulator());
+        regulators.push_back(new Regulator());
+    }
     Genome(string n): name(n){}
 
     //getters
@@ -30,7 +35,7 @@ public:
     string toString();
 
     //functions
-    void mutate(float stddev);
+    void mutate();
     void addRegulator(string n);
 };
 

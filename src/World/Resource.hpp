@@ -33,7 +33,7 @@ private:
 public:
     //constructors
     Resource(){}
-    Resource(int i,string n, double m, float e): id(i), name(n), mass(w), energy(e){}
+    Resource(int i,string n, double m, float e): id(i), name(n), mass(m), energy(e){}
 
     //getters
     int getId(){

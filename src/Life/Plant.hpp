@@ -11,7 +11,8 @@
 
 //Evolution libraries
 #include "Lifeform.hpp"
-
+#include "../World/Utilities/Location.hpp"
+#include "./Utilities/Color.hpp"
 //std libraries
 #include<string>
 // #include<vector>
@@ -21,7 +22,7 @@ private:
 
 public:
     //constructors
-    Plant(string n, unsigned char x, unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e): Lifeform(n,x,y,r,g,b,a,w,e) {}
+    Plant(string n, unsigned char x, unsigned char y, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e): Lifeform(n,Location(x,y),Color(r,g,b),a,w,e) {}
 
     //getters
 

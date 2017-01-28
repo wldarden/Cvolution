@@ -26,11 +26,11 @@ string Genome::getName(){
 //     return value;
 // }
 
-// void mutate(){
-//     float delta = ((rand() % 200 - 100) / 100) * drift; // -100% to 100% of drift
-//     value += delta;
-//     drift += delta/10; //vary drift by much less
-// }
+void Genome::mutate(){
+    for(Regulator* r:regulators){
+        r->mutate();
+    }
+}
 
 // string toString(){
 //     return "Name: " + name + " Value: " + value + " Drift: " + drift;

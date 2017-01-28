@@ -25,10 +25,18 @@ private:
     Gene* drift;
     vector<Gene*> genes;
 
+    void addGene();
 public:
     //constructors
-    Regulator(){}
-    Regulator(string n, float d): name(n){
+    Regulator(){
+        name = "DefaultRegulator";
+        weight = DEF_REGULATOR_WEIGHT;
+        drift = new Gene("Drift",DEF_GENE_DRIFT,DEF_REGULATOR_DRIFT);
+        genes.push_back(new Gene());
+        genes.push_back(new Gene());
+        genes.push_back(new Gene());
+    }
+    Regulator(string n, float w, float d): name(n), weight(w){
         drift = new Gene("Drift",d,DEF_REGULATOR_DRIFT);
     }
 

@@ -19,7 +19,7 @@ class Location{
 private:
     unsigned char x;
     unsigned char y;
-    unsigned char max;
+    static unsigned char max;
 
     unsigned char validate(unsigned char xy){
         xy = xy > max ? max : xy;
@@ -27,7 +27,10 @@ private:
     }
 public:
     //constructors
-    Location(unsigned char X, unsigned char Y, unsigned char m):x(X), y(Y), max(m){}
+    Location(unsigned char X, unsigned char Y):x(X), y(Y){}
+    Location(unsigned char X, unsigned char Y, unsigned char m):x(X), y(Y){
+         max = m;
+    }
     // Location(int X, int Y, int m):x((unsigned char) X), y((unsigned char) Y), max((unsigned char) m){}
 
     //getters

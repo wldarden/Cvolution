@@ -8,6 +8,8 @@
 
 #ifndef Globas_hpp
 #define Globas_hpp
+#include <string>
+using namespace std;
 ////////////////////////////////////////////////Program globals
 
 ////////////////////////////////////////////////World globals
@@ -29,4 +31,7 @@ const string VERSION = "0.1";
 //when calling a toString method, pass DETAIL as a parameter to vary level of description
 enum DETAIL {LESS, MORE, FULL};
 enum LOCATION_ERRORS {OUT_OF_BOUNDS};
+
+//////////////////////////DEFINITIONS
+////////////////////////////////////////////////
 #endif /* Globas_hpp */
