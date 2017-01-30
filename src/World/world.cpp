@@ -11,7 +11,7 @@
 #include "../Globals.hpp"
 //std libraries
 #include<string>
-#include<vector>
+#include<list>
 
 using namespace std;
 
@@ -27,16 +27,16 @@ void World::update(){
 
 //INFO
 
-vector<string> World::getSpecies(){
-    vector<string> list;
+list<string> World::getSpecies(){
+    list<string> list;
     for(Species* s:species){
         list.push_back(s->getName());
     }
     return list;
 }
 
-vector<string> World::getBiomes(){
-    vector<string> list;
+list<string> World::getBiomes(){
+    list<string> list;
     for(Biome* b:biomes){
         list.push_back(b->getName());
     }

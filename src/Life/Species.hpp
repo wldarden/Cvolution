@@ -27,7 +27,7 @@ private:
     //init functions
     void seedPop(int n);
     void addLifeform(Lifeform* l);
-    virtual Lifeform* builder();
+    Lifeform* builder();
     //Analytical functions
     Genome defineGenome(list<Lifeform*> pop);
 
@@ -37,18 +37,24 @@ public:
         name = "DefaultSpecies";
         genome = new Genome();
         population = 0;
-        seedPop(DEF_SPECIES_SEED_POP);
+        // seedPop(DEF_SPECIES_SEED_POP);
     }
-    Species(string n): name(n){}
-
+    Species(string n): name(n){
+        genome = new Genome();
+        population = 0;
+    }
+    // //Deconstructors
+    // ~Species(){
+    //
+    // }
     //getters
     string getName();
     Genome* getGenome();
 
     //functions
-    void mutate(float stddev);// create child species
+    // void mutate();// create child species
     string toString(int style);
-    float getFitness();
+    // float getFitness();
 };
 
 #endif /* Species_hpp */

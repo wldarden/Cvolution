@@ -13,12 +13,17 @@
 #include "../Globals.hpp"
 //std libraries
 #include<string>
-// #include<vector>
+#include<list>
 
 using namespace std;
 
 class Resource{
 private:
+    //Global resource variables
+    static list<string> allNames;
+    static list<Resource*> allResources;
+    static int allCount;
+
     int id;
     string name;
     double mass;//kg
@@ -33,7 +38,11 @@ private:
 public:
     //constructors
     Resource(){}
-    Resource(int i,string n, double m, float e): id(i), name(n), mass(m), energy(e){}
+    Resource(int i,string n, double m, float e): id(i), name(n), mass(m), energy(e){
+        allNames.push_back(n);
+        allCount++;
+        allResources.push_back(this);
+    }
 
     //getters
     int getId(){
@@ -62,6 +71,7 @@ public:
         switch(style){
             case(LESS): return "Resource: " + name + "Available: " + to_string(mass) + "(kg) " + "Energy: " + to_string(energy) + "J/kg";
         }
+        return "ERROR: No description found for given style in Resource.hpp";
     }
 };
 

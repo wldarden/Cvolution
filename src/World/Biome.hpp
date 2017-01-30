@@ -19,8 +19,6 @@
 
 class Biome{
 private:
-    const int SIZE = DEF_BIOME_SIZE;
-
     string name;
     int size;
     Weather* weather;
@@ -32,7 +30,7 @@ public:
     Biome(){
         name = "DefaultBiome";
         weather = new Weather();
-        size = SIZE;
+        size = DEF_BIOME_SIZE;
     }
     Biome(string n): name(n){
         //define weather based on type

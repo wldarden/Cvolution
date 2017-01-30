@@ -12,7 +12,7 @@
 //Evolution libraries
 #include "../World/Utilities/Location.hpp"
 #include "./Utilities/Color.hpp"
-
+#include "../Genome/Genome.hpp"
 //std libraries
 #include<string>
 #include<stdlib.h>
@@ -25,6 +25,7 @@ protected:
     string name;
     Location* loc;
     Color* color;
+    Genome* genome;
     int age;
     float water;
     float energy;
@@ -32,17 +33,29 @@ protected:
 
 public:
     //constructors
+    //Default
+    //Default Reproduction
     Lifeform(){
         name = "DefaultLifeform";
         loc = new Location(rand()%DEF_BIOME_SIZE,rand()%DEF_BIOME_SIZE);
         color = new Color();
+        genome = new Genome();
         age = 0;
         water = DEF_LIFEFORM_WATER;
         energy = DEF_LIFEFORM_ENERGY;
         mass = .01;
     }
-    Lifeform(string n, Location* l, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
-        name(n), loc(l),color(new Color(r,g,b)),age(a),water(w),energy(e) {}
+    // Lifeform(string name, Genome pgenome, Location l){
+    //     name = name;
+    //     loc = l;
+    //     color = new Color();
+    //     age = 0;
+    //     water = DEF_LIFEFORM_WATER;
+    //     energy = DEF_LIFEFORM_ENERGY;
+    //     mass = .01;
+    // }
+    // Lifeform(string n, Location* l, unsigned char r, unsigned char g, unsigned char b, int a, float w, float e):
+    //     name(n), loc(l),color(new Color(r,g,b)),age(a),water(w),energy(e) {}
     Lifeform(string n, Location* l, Color* c, int a, float w, float e):
         name(n), loc(l),color(c),age(a),water(w),energy(e) {}
     //getters
@@ -57,9 +70,12 @@ public:
 
     //functions
     string toString(int style);
-    virtual Lifeform* reproduce();
-    virtual void update();
+    void update();
 
+    Lifeform* reproduce();
+    void grow();
+    void eat();
+    void react();
 
 };
 

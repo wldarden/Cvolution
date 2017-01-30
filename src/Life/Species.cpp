@@ -21,6 +21,10 @@ string Species::getName(){
     return name;
 }
 
+Lifeform* Species::builder(){
+    return new Lifeform();
+}
+
 //Generate a set of new Lifeforms using the species genome
 void Species::seedPop(int n){
     for(int i = 0; i < n ;i++){

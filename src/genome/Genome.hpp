@@ -32,7 +32,7 @@ public:
     //getters
     string getName();
     vector<string> getRegulators();
-    string toString();
+    string toString(int style);
 
     //functions
     void mutate();

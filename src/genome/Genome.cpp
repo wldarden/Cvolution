@@ -8,6 +8,7 @@
 
 // #include "stdlib.h"
 #include "Genome.hpp"
+#include "../Globals.hpp"
 //std libraries
 #include<string>
 // #include<vector>
@@ -32,6 +33,11 @@ void Genome::mutate(){
     }
 }
 
-// string toString(){
-//     return "Name: " + name + " Value: " + value + " Drift: " + drift;
-// }
+string Genome::toString(int style){
+    string desc;
+    switch(style){
+    case(LESS): return "Name: " + name + " Regulators: " + to_string(regulators.size());
+    case(MORE): desc = toString(LESS) + "\n";
+    }
+    return "ERROR: No description found for given style in Genome.cpp";
+}

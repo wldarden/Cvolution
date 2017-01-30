@@ -18,6 +18,23 @@
 
 using namespace std;
 
+Lifeform* Lifeform::reproduce(){
+    return new Lifeform();
+}
+void Lifeform::grow(){
+
+}
+void Lifeform::eat(){
+
+}
+void Lifeform::react(){
+
+}
+
+void Lifeform::update(){
+    age++;
+}
+
 string Lifeform::toString(int style){
     switch(style){
     case(LESS): return "Name: " + name + " Mass: " + to_string(mass) + "(kg) water: " + to_string(water) + " energy: " + to_string(energy);

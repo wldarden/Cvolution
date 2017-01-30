@@ -8,6 +8,7 @@
 
 //Evolution libraries
 #include "Gene.hpp"
+#include "../Options.hpp"
 
 //std libraries
 #include <stdlib.h>

@@ -46,5 +46,5 @@ string Regulator::toString(int style){
         }
         return description;
     }
-
+    return "ERROR: no description found for given style  in Regulator.cpp";
 }

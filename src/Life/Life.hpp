@@ -32,7 +32,7 @@ private:
     vector<Lifeform*> seedPop(int n);
 
     //Analytical functions
-    Genome defineGenome(vector<Lifeform*> pop);
+    // Genome defineGenome(vector<Lifeform*> pop);
 
 public:
     //constructors
@@ -41,13 +41,13 @@ public:
 
     //getters
     string getName();
-    Genome* getGenome();
+
 
 
     //functions
-    void mutate(float stddev);
+
     string toString(int style);
-    float getFitness();
+
 };
 
 #endif /* Life_hpp */

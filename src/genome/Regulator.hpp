@@ -5,7 +5,9 @@
 //  Created by Will Darden on 1/22/17.
 //
 //Regulators hold a collection of genes that determine actions for a given lifeforms "state", which is modeled by the regulator
-
+//
+//Grow
+//
 #ifndef Regulator_hpp
 #define Regulator_hpp
 
@@ -28,6 +30,8 @@ private:
     void addGene();
 public:
     //constructors
+    //Default
+    //Named default
     Regulator(){
         name = "DefaultRegulator";
         weight = DEF_REGULATOR_WEIGHT;

@@ -11,15 +11,15 @@ Controller.o: src/Controller.cpp src/Controller.hpp src/World/World.hpp src/Opti
 	$(CXX) $(CXXFLAGS) -c src/Controller.cpp
 World.o: src/World/World.cpp src/World/World.hpp src/World/Biome.hpp src/World/Weather.hpp src/Options.hpp
 	$(CXX) $(CXXFLAGS) -c src/World/World.cpp
-Biome.o: src/World/Biome.cpp src/World/Biome.hpp src/World/Weather.hpp src/Options.hpp
+Biome.o: src/World/Biome.cpp src/World/Biome.hpp src/World/Weather.hpp src/Options.hpp src/World/Resource.hpp
 	$(CXX) $(CXXFLAGS) -c src/World/Biome.cpp
 Weather.o: src/World/Weather.cpp src/World/Weather.hpp src/Options.hpp
 	$(CXX) $(CXXFLAGS) -c src/World/Weather.cpp
-Plant.o: src/Life/Plant.cpp src/Life/Plant.hpp src/Life/Lifeform.hpp src/genome/Genome.hpp src/Options.hpp
+Plant.o: src/Life/Plant.cpp src/Life/Plant.hpp src/Life/Lifeform.hpp src/genome/Genome.hpp src/Options.hpp src/World/Resource.hpp
 	$(CXX) $(CXXFLAGS) -c src/Life/Plant.cpp
-Species.o: src/Life/Species.cpp src/Life/Species.hpp src/Life/Lifeform.hpp src/genome/Genome.hpp src/Options.hpp
+Species.o: src/Life/Species.cpp src/Life/Species.hpp src/Life/Lifeform.hpp src/genome/Genome.hpp src/Options.hpp src/World/Resource.hpp
 	$(CXX) $(CXXFLAGS) -c src/Life/Species.cpp
-Lifeform.o: src/Life/Lifeform.cpp src/Life/Lifeform.hpp src/Options.hpp src/World/Utilities/Location.hpp
+Lifeform.o: src/Life/Lifeform.cpp src/Life/Lifeform.hpp src/Options.hpp src/World/Utilities/Location.hpp src/World/Resource.hpp
 	$(CXX) $(CXXFLAGS) -c src/Life/Lifeform.cpp
 Genome.o: src/genome/Genome.cpp src/genome/Genome.hpp src/genome/Regulator.hpp src/genome/Gene.hpp src/Options.hpp
 	$(CXX) $(CXXFLAGS) -c src/genome/Genome.cpp

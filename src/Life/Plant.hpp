@@ -17,7 +17,7 @@
 #include<string>
 // #include<vector>
 
-class Plant : public Lifeform{
+class Plant : public Lifeform {
 private:
 
 public:
@@ -27,7 +27,7 @@ public:
     //getters
 
     //functions
-    Plant* reproduce();
+    Lifeform* reproduce();
     void grow();
     void eat();
 
