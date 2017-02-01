@@ -26,6 +26,7 @@
 #include <FL/Fl_Select_Browser.H>
 #include <FL/Fl_Choice.H>
 
+
 class View{
 public:
     //constructors
