@@ -15,6 +15,7 @@
 #include<string>
 #include<vector>
 using namespace std;
+
 class Genome{
 private:
     string name;

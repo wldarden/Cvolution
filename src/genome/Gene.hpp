@@ -15,24 +15,34 @@
 // #include<vector>
 
 using namespace std;
-
+enum GENE_TYPES {INT, ALPHA};
 class Gene{
 private:
     string name;
+    int type;
     double value;
+    string seq;
     double drift;
 
 public:
     //constructors
     Gene(){
-        name = "Efficiency";
+        name = "defGeneInt";
+        type = INT;
         value = 5;
         drift = DEF_GENE_DRIFT;
     }
-    Gene(string n, double v):name(n), value(v){
+    Gene(int t){
+        name = "defGeneAlpha";
+        type = INT;
+        value = 5;
         drift = DEF_GENE_DRIFT;
     }
-    Gene(string n, double v, double d): name(n), value(v), drift(d) {}
+    Gene(string n, double v):name(n), value(v), type(INT){
+        drift = DEF_GENE_DRIFT;
+    }
+    Gene(string n, double v, double d): name(n), value(v), drift(d), type(INT) {}
+
 
     //getters
     string getName();

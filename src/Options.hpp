@@ -41,5 +41,5 @@ const int DEF_GENES_PER_REG = 3;
 ////////////////////////////////////////////////Gene options
 const int DEF_GENE_VALUE = 10;
 const int DEF_GENE_DRIFT = 10;
-
+const int DEF_DRIFT_DRIFT = 10;//denominator of drift-drift change, applied to drift
 #endif /* Options_hpp */

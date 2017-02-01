@@ -32,7 +32,7 @@ double Gene::getValue(){
 void Gene::mutate(){
     double delta = ((rand() % 200 - 100) / 100) * drift; // -100% to 100% of drift
     value += delta;
-    drift += delta/10; //vary drift by much less
+    drift += delta/DEF_DRIFT_DRIFT; //vary drift by much less
 }
 
 string Gene::toString(){
